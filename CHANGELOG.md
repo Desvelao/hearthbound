@@ -23,3 +23,7 @@ First release.
 - JSON backup export and import.
 - English, Spanish, German, French and Italian, plus a System default that follows the phone.
 - Fully offline: no account, no server and no `INTERNET` permission.
+- Releases publish the APK, the AAB, the R8 mapping and a `SHA256SUMS` file so a download can be verified.
+
+[Unreleased]: https://github.com/Desvelao/hearthbound/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Desvelao/hearthbound/releases/tag/v0.1.0
