@@ -75,7 +75,9 @@ jobs:
 
       - name: Check the pixel art
         run: |
-          python3 -m pip install --quiet pillow pyyaml
+          # System packages, because "python3 -I" (isolated mode) ignores pip's user site.
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq python3-pil python3-yaml
           make sprites RUN=
 
       - name: Test and lint
