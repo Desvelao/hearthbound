@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rewards_empty">Añade un capricho que disfrutes, como un episodio o un café, y págalo con oro.</string>
+    <string name="rewards_cost">%1$d de oro</string>
+    <string name="rewards_need_more">faltan %1$d</string>
+    <string name="rewards_buy">Comprar</string>
+    <string name="rewards_edit_cd">Editar %1$s</string>
+    <string name="rewards_add_cd">Añadir recompensa</string>
+    <string name="rewards_dialog_new">Nueva recompensa</string>
+    <string name="rewards_dialog_edit">Editar recompensa</string>
+    <string name="rewards_field_title">Título</string>
+    <string name="rewards_field_cost">Coste en oro</string>
+    <string name="rewards_field_notes">Notas</string>
+    <string name="rewards_save">Guardar</string>
+    <string name="rewards_delete">Eliminar</string>
+    <string name="rewards_cancel">Cancelar</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rewards_empty">Ajoute une petite gâterie qui te fait plaisir, comme un épisode ou un café, et paie-la avec de l\'or.</string>
+    <string name="rewards_cost">%1$d or</string>
+    <string name="rewards_need_more">il en manque %1$d</string>
+    <string name="rewards_buy">Acheter</string>
+    <string name="rewards_edit_cd">Modifier %1$s</string>
+    <string name="rewards_add_cd">Ajouter une récompense</string>
+    <string name="rewards_dialog_new">Nouvelle récompense</string>
+    <string name="rewards_dialog_edit">Modifier la récompense</string>
+    <string name="rewards_field_title">Titre</string>
+    <string name="rewards_field_cost">Coût en or</string>
+    <string name="rewards_field_notes">Notes</string>
+    <string name="rewards_save">Enregistrer</string>
+    <string name="rewards_delete">Supprimer</string>
+    <string name="rewards_cancel">Annuler</string>
+</resources>

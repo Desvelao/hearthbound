@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rewards_empty">Add a treat you will enjoy, like an episode or a coffee, and pay for it with gold.</string>
+    <string name="rewards_cost">%1$d gold</string>
+    <string name="rewards_need_more">need %1$d more</string>
+    <string name="rewards_buy">Buy</string>
+    <string name="rewards_edit_cd">Edit %1$s</string>
+    <string name="rewards_add_cd">Add reward</string>
+    <string name="rewards_dialog_new">New reward</string>
+    <string name="rewards_dialog_edit">Edit reward</string>
+    <string name="rewards_field_title">Title</string>
+    <string name="rewards_field_cost">Cost in gold</string>
+    <string name="rewards_field_notes">Notes</string>
+    <string name="rewards_save">Save</string>
+    <string name="rewards_delete">Delete</string>
+    <string name="rewards_cancel">Cancel</string>
+</resources>

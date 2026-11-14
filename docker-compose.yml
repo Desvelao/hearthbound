@@ -1,0 +1,28 @@
+services:
+  dev:
+    build: .
+    # Own tag: the plain android-dev tag is shared with other projects and was overwritten by one without python,
+    # which tools/sprites.py needs.
+    image: android-dev:python
+    user: "${UID:-1000}:${GID:-1000}"
+    network_mode: host          # lets the container's adb reach a host emulator (Linux only)
+    environment:
+      - HOME=/gradle
+      # Brand parameters (all optional; neutral defaults live in the Gradle build)
+      - APP_NAME
+      - APP_ID
+      - APP_VERSION_NAME
+      - APP_VERSION_CODE
+      - APP_ABOUT_URL
+      - SIGNING_KEYSTORE
+      - SIGNING_STORE_PASSWORD
+      - SIGNING_KEY_ALIAS
+      - SIGNING_KEY_PASSWORD
+    volumes:
+      - .:/workspace
+      - gradle-cache:/gradle
+volumes:
+  # Shared with the brain-training project so downloaded Gradle/AGP/Compose artifacts are reused.
+  gradle-cache:
+    external: true
+    name: brain-training-androind_gradle-cache

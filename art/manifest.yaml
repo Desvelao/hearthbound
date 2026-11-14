@@ -1,0 +1,62 @@
+# Layer types fix the canvas and (for avatar layers) the shared anchor box [x0, y0, x1, y1].
+layer_types:
+  body:   {size: [32, 32], anchor: [6, 2, 25, 31]}
+  hair:   {size: [32, 32], anchor: [6, 2, 25, 31]}
+  outfit: {size: [32, 32], anchor: [6, 2, 25, 31]}
+  icon:   {size: [16, 16]}
+  armour:   {size: [32, 32], anchor: [6, 2, 25, 31]}
+  headgear: {size: [32, 32], anchor: [6, 2, 25, 31]}
+  weapon:   {size: [32, 32], anchor: [2, 2, 29, 31]}
+  pet:      {size: [16, 16]}
+  boss:     {size: [32, 32]}
+
+# `swaps` replace palette colours for one item. `price` is the shop price in gold and is required on shop layers
+# (armour, headgear, weapon, pet), which also need a `tier` 1..3 except pets. The layer is the equipment slot.
+# Ids and prices must equal `Catalog.kt` in core/domain; `CatalogTest` checks it.
+items:
+  - {id: body_default,        layer: body,   source: body.sprite}
+  - {id: body_male,           layer: body,   source: body_male.sprite}
+  - {id: body_female,         layer: body,   source: body_female.sprite}
+  - {id: outfit_tunic,        layer: outfit, source: outfit_tunic.sprite}
+  - {id: outfit_tunic_male,   layer: outfit, source: outfit_tunic_male.sprite}
+  - {id: outfit_tunic_female, layer: outfit, source: outfit_tunic_female.sprite}
+  - {id: hair_short_brown,    layer: hair,   source: hair_short.sprite}
+  - {id: hair_short_black,    layer: hair,   source: hair_short.sprite,
+     swaps: {h: "#2b2b36", i: "#17171f", j: "#4a4a5c"}}
+  - {id: hair_short_blond,    layer: hair,   source: hair_short.sprite,
+     swaps: {h: "#d9b44a", i: "#a98424", j: "#f0d27a"}}
+  - {id: hair_long_brown,     layer: hair,   source: hair_long.sprite}
+  - {id: hair_spiky_brown,    layer: hair,   source: hair_spiky.sprite}
+  - {id: icon_health,         layer: icon,   source: icon_health.sprite}
+  - {id: icon_xp,             layer: icon,   source: icon_xp.sprite}
+  - {id: icon_gold,           layer: icon,   source: icon_gold.sprite}
+  - {id: icon_mana,           layer: icon,   source: icon_mana.sprite}
+  - {id: boss_slime_king,     layer: boss,   source: boss_slime_king.sprite, swaps: {l: "#5cc96b", L: "#2f8f45"}}
+  - {id: boss_stone_golem,    layer: boss,   source: boss_stone_golem.sprite, swaps: {l: "#9aa3b5", L: "#6a7389"}}
+  - {id: boss_frost_wyrm,     layer: boss,   source: boss_frost_wyrm.sprite, swaps: {l: "#8fd3f4", L: "#4f8fc0"}}
+  - {id: weapon_sword_bronze,           layer: weapon,    source: weapon_sword.sprite, tier: 1, price: 60, swaps: {s: "#c9843f", S: "#8f5a22", z: "#e8b36f"}}
+  - {id: weapon_sword_steel,            layer: weapon,    source: weapon_sword.sprite, tier: 2, price: 180}
+  - {id: weapon_sword_gold,             layer: weapon,    source: weapon_sword.sprite, tier: 3, price: 450, swaps: {s: "#f4c95d", S: "#b8860b", z: "#fff0a8"}}
+  - {id: weapon_staff_bronze,           layer: weapon,    source: weapon_staff.sprite, tier: 1, price: 60, swaps: {s: "#c9843f", S: "#8f5a22", z: "#e8b36f"}}
+  - {id: weapon_staff_steel,            layer: weapon,    source: weapon_staff.sprite, tier: 2, price: 180, swaps: {l: "#b06be8", L: "#7a3fb0"}}
+  - {id: weapon_staff_gold,             layer: weapon,    source: weapon_staff.sprite, tier: 3, price: 450, swaps: {s: "#f4c95d", S: "#b8860b", z: "#fff0a8", l: "#ff9d3d", L: "#c4631a"}}
+  - {id: armour_vest_bronze,            layer: armour,    source: armour_vest.sprite, tier: 1, price: 60, swaps: {s: "#c9843f", S: "#8f5a22", z: "#e8b36f"}}
+  - {id: armour_vest_steel,             layer: armour,    source: armour_vest.sprite, tier: 2, price: 180}
+  - {id: armour_vest_gold,              layer: armour,    source: armour_vest.sprite, tier: 3, price: 450, swaps: {s: "#f4c95d", S: "#b8860b", z: "#fff0a8"}}
+  - {id: armour_plate_bronze,           layer: armour,    source: armour_plate.sprite, tier: 1, price: 60, swaps: {s: "#c9843f", S: "#8f5a22", z: "#e8b36f"}}
+  - {id: armour_plate_steel,            layer: armour,    source: armour_plate.sprite, tier: 2, price: 180}
+  - {id: armour_plate_gold,             layer: armour,    source: armour_plate.sprite, tier: 3, price: 450, swaps: {s: "#f4c95d", S: "#b8860b", z: "#fff0a8"}}
+  - {id: head_cap_bronze,               layer: headgear,  source: head_cap.sprite, tier: 1, price: 60, swaps: {s: "#c9843f", S: "#8f5a22", z: "#e8b36f"}}
+  - {id: head_cap_steel,                layer: headgear,  source: head_cap.sprite, tier: 2, price: 180}
+  - {id: head_cap_gold,                 layer: headgear,  source: head_cap.sprite, tier: 3, price: 450, swaps: {s: "#f4c95d", S: "#b8860b", z: "#fff0a8"}}
+  - {id: head_helm_bronze,              layer: headgear,  source: head_helm.sprite, tier: 1, price: 60, swaps: {s: "#c9843f", S: "#8f5a22", z: "#e8b36f"}}
+  - {id: head_helm_steel,               layer: headgear,  source: head_helm.sprite, tier: 2, price: 180}
+  - {id: head_helm_gold,                layer: headgear,  source: head_helm.sprite, tier: 3, price: 450, swaps: {s: "#f4c95d", S: "#b8860b", z: "#fff0a8"}}
+  - {id: pet_fox_red,                   layer: pet,       source: pet_fox.sprite, price: 250, swaps: {h: "#d9742c", i: "#a14a14", j: "#f0a05c"}}
+  - {id: pet_fox_snow,                  layer: pet,       source: pet_fox.sprite, price: 250, swaps: {h: "#d7dcea", i: "#a9b1c6", j: "#f6f8fc"}}
+  - {id: pet_owl_brown,                 layer: pet,       source: pet_owl.sprite, price: 250}
+  - {id: pet_owl_grey,                  layer: pet,       source: pet_owl.sprite, price: 250, swaps: {h: "#7d8196", i: "#565a6e", j: "#a7abbd"}}
+  - {id: pet_slime_green,               layer: pet,       source: pet_slime.sprite, price: 250, swaps: {h: "#5cbf5f", i: "#3a8f48", j: "#9be39a"}}
+  - {id: pet_slime_blue,                layer: pet,       source: pet_slime.sprite, price: 250, swaps: {h: "#4f9be0", i: "#2f6db0", j: "#8fc6f5"}}
+  - {id: pet_cat_black,                 layer: pet,       source: pet_cat.sprite, price: 250, swaps: {h: "#4c4c64", i: "#33334a", j: "#70708c"}}
+  - {id: pet_cat_ginger,                layer: pet,       source: pet_cat.sprite, price: 250, swaps: {h: "#e39a4a", i: "#b06a22", j: "#f3c27f"}}

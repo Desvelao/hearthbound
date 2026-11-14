@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rewards_empty">Füge eine Belohnung hinzu, die dir Freude macht, etwa eine Folge oder einen Kaffee, und bezahle sie mit Gold.</string>
+    <string name="rewards_cost">%1$d Gold</string>
+    <string name="rewards_need_more">es fehlen %1$d</string>
+    <string name="rewards_buy">Kaufen</string>
+    <string name="rewards_edit_cd">%1$s bearbeiten</string>
+    <string name="rewards_add_cd">Belohnung hinzufügen</string>
+    <string name="rewards_dialog_new">Neue Belohnung</string>
+    <string name="rewards_dialog_edit">Belohnung bearbeiten</string>
+    <string name="rewards_field_title">Titel</string>
+    <string name="rewards_field_cost">Preis in Gold</string>
+    <string name="rewards_field_notes">Notizen</string>
+    <string name="rewards_save">Speichern</string>
+    <string name="rewards_delete">Löschen</string>
+    <string name="rewards_cancel">Abbrechen</string>
+</resources>

@@ -1,0 +1,26 @@
+# One character per colour. '.' is always transparent and is not listed here.
+# A manifest item may override colours (a palette swap) without redrawing the grid.
+colors:
+  o: "#20202c"   # outline
+  a: "#f1c27d"   # skin
+  b: "#d9a066"   # skin shade
+  c: "#fbe0b0"   # skin highlight
+  m: "#b5553d"   # mouth
+  h: "#6b4423"   # hair
+  i: "#4a2e17"   # hair shade
+  j: "#8d5e34"   # hair highlight
+  t: "#3f8ce0"   # shirt
+  u: "#2c63a8"   # shirt shade
+  v: "#7bb4f0"   # shirt highlight
+  p: "#5a5f78"   # trousers
+  q: "#3a3d50"   # trousers shade, shoes
+  r: "#d64545"   # red
+  R: "#8f2a2a"   # dark red
+  y: "#f4c95d"   # gold
+  Y: "#b8860b"   # dark gold
+  l: "#5aa9ff"   # blue
+  L: "#2c63a8"   # dark blue
+  W: "#ffffff"   # white highlight
+  s: "#9aa3b5"   # metal
+  S: "#6a7389"   # metal shade
+  z: "#d5dbe8"   # metal highlight

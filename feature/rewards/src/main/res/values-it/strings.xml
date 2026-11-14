@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rewards_empty">Aggiungi un premio che ti piace, come un episodio o un caffè, e pagalo con l\'oro.</string>
+    <string name="rewards_cost">%1$d oro</string>
+    <string name="rewards_need_more">ne mancano %1$d</string>
+    <string name="rewards_buy">Compra</string>
+    <string name="rewards_edit_cd">Modifica %1$s</string>
+    <string name="rewards_add_cd">Aggiungi premio</string>
+    <string name="rewards_dialog_new">Nuovo premio</string>
+    <string name="rewards_dialog_edit">Modifica premio</string>
+    <string name="rewards_field_title">Titolo</string>
+    <string name="rewards_field_cost">Costo in oro</string>
+    <string name="rewards_field_notes">Note</string>
+    <string name="rewards_save">Salva</string>
+    <string name="rewards_delete">Elimina</string>
+    <string name="rewards_cancel">Annulla</string>
+</resources>
