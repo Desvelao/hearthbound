@@ -22,6 +22,7 @@ First release.
 - Optional pause mode, day-start hour, and switches for gear bonuses, quests and classes.
 - JSON backup export and import.
 - English, Spanish, German, French and Italian, plus a System default that follows the phone.
+- A flame-and-check-mark app icon, with a themed (monochrome) version and a matching notification icon.
 - Fully offline: no account, no server and no `INTERNET` permission.
 - Releases publish the APK, the AAB, the R8 mapping and a `SHA256SUMS` file so a download can be verified.
 

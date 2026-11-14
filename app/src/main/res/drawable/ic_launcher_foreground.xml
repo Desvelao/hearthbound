@@ -3,7 +3,9 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    <!-- A flame with a check mark cut out of it (even-odd), so the cut-out is transparent in the themed monochrome icon too. -->
     <path
         android:fillColor="#FFF4C95D"
-        android:pathData="M54,30 L62,46 L80,48 L67,60 L70,78 L54,69 L38,78 L41,60 L28,48 L46,46 Z" />
+        android:fillType="evenOdd"
+        android:pathData="M54,22 C60,34 78,42 78,62 C78,76 67,86 54,86 C41,86 30,76 30,62 C30,52 36,46 40,40 C42,46 46,48 48,46 C46,38 48,30 54,22 Z M44.48,60.53 L50.78,66.83 L64.32,50.75 L69.68,55.25 L51.22,77.17 L39.53,65.48 Z" />
 </vector>
