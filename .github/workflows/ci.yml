@@ -11,9 +11,10 @@ jobs:
       - name: Build the toolchain image
         run: docker compose build
       - name: Check the pixel art
-        run: docker compose run --rm -e UID=$(id -u) dev python3 -I tools/sprites.py --check
+        # --user, not -e UID: compose reads ${UID} from the host shell (unexported in bash), so -e never changed the user.
+        run: docker compose run --rm --user "$(id -u):$(id -g)" dev python3 -I tools/sprites.py --check
       - name: Build, test, lint
-        run: docker compose run --rm -e UID=$(id -u) dev ./gradlew :core:domain:test testDebugUnitTest lint assembleDebug --console=plain
+        run: docker compose run --rm --user "$(id -u):$(id -g)" dev ./gradlew :core:domain:test testDebugUnitTest lint assembleDebug --console=plain
       - uses: actions/upload-artifact@v4
         with:
           name: debug-apk
