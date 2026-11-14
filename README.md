@@ -109,7 +109,8 @@ curl -fLO "$BASE/$APK"          # or: wget "$BASE/$APK"
 # 1. Check the file was not corrupted or replaced:
 sha256sum --check --ignore-missing SHA256SUMS      # prints "<file>.apk: OK"
 
-# 2. Check who signed it (apksigner is in the Android SDK build-tools, or `docker compose run --rm dev`):
+# 2. Check who signed it (apksigner is in the Android SDK build-tools; in the dev image it is under
+#    $ANDROID_HOME/build-tools/<version>/, not on the PATH):
 apksigner verify --print-certs "$APK" | grep 'SHA-256 digest'
 ```
 
