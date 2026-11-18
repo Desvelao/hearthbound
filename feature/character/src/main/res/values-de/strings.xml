@@ -136,4 +136,9 @@
         <item quantity="one">%1$d Attributpunkt zu verteilen</item>
         <item quantity="other">%1$d Attributpunkte zu verteilen</item>
     </plurals>
+    <string name="character_paused">Pausiert: kein Schaden, Serien eingefroren. Zum Fortsetzen tippen</string>
+    <string name="character_resume_title">Spiel fortsetzen?</string>
+    <string name="character_resume_body">Verpasste Dailies verursachen wieder Schaden und Serien zählen ab heute weiter.</string>
+    <string name="character_resume_confirm">Fortsetzen</string>
+    <string name="character_resume_cancel">Pausiert lassen</string>
 </resources>

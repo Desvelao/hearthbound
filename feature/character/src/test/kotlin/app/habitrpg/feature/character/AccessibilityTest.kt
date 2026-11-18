@@ -8,6 +8,7 @@ import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -40,6 +41,21 @@ class AccessibilityTest {
         compose.setContent { MaterialTheme { CharacterHeaderContent(hero, onClick = { opened++ }) } }
         compose.onNodeWithText("Level 3").performClick()
         assertEquals(1, opened)
+    }
+
+    @Test fun pausedBannerAsksBeforeResuming() {
+        var resumed = 0
+        compose.setContent { MaterialTheme { CharacterHeaderContent(hero, onClick = {}, paused = true, onResume = { resumed++ }) } }
+        compose.onNodeWithText("Paused", substring = true).performClick()
+        assertEquals(0, resumed)
+        compose.onNodeWithText("Resume the game?").assertExists()
+        compose.onNodeWithText("Resume").performClick()
+        assertEquals(1, resumed)
+    }
+
+    @Test fun noBannerWhenNotPaused() {
+        compose.setContent { MaterialTheme { CharacterHeaderContent(hero, onClick = {}) } }
+        assertEquals(0, compose.onAllNodesWithText("Paused", substring = true).fetchSemanticsNodes().size)
     }
 
     @Test fun theCharacterHasAnAccessibleName() {

@@ -46,7 +46,8 @@ fun CharacterHeader(
     val c by viewModel.character.collectAsStateWithLifecycle()
     val look by viewModel.look.collectAsStateWithLifecycle()
     val manaOn by viewModel.manaOn.collectAsStateWithLifecycle()
-    CharacterHeaderContent(c, onClick, modifier, trailing, look, showMana = manaOn && c.classId != null)
+    val paused by viewModel.paused.collectAsStateWithLifecycle()
+    CharacterHeaderContent(c, onClick, modifier, trailing, look, showMana = manaOn && c.classId != null, paused = paused, onResume = viewModel::resume)
 }
 
 @Composable
@@ -57,10 +58,13 @@ fun CharacterHeaderContent(
     trailing: @Composable () -> Unit = {},
     look: AvatarLook = AvatarLook(),
     showMana: Boolean = false,
+    paused: Boolean = false,
+    onResume: () -> Unit = {},
 ) {
     Surface(modifier.fillMaxWidth(), color = MaterialTheme.colorScheme.surfaceContainer) {
+      Column(Modifier.statusBarsPadding()) {
         Row(
-            Modifier.statusBarsPadding().clickable(onClickLabel = "Open character", onClick = onClick).padding(12.dp),
+            Modifier.clickable(onClickLabel = "Open character", onClick = onClick).padding(12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
@@ -84,6 +88,8 @@ fun CharacterHeaderContent(
             }
             trailing()
         }
+        if (paused) PausedBanner(onResume, Modifier.padding(start = 12.dp, end = 12.dp, bottom = 8.dp))
+      }
     }
 }
 

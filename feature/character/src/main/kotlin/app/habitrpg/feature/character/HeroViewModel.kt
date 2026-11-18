@@ -35,6 +35,7 @@ data class HeroUiState(
     val owned: Set<String> = emptySet(),
     val equipped: Map<Slot, String> = emptyMap(),
     val classesOn: Boolean = true,
+    val paused: Boolean = false,
     val bossActive: Boolean = false,
 )
 
@@ -63,10 +64,12 @@ class HeroViewModel @Inject constructor(
             true, values[0] as Character, s.hair, s.body, values[2] as HistoryData, values[3] as Int,
             weekAndTasks.first, weekAndTasks.second, owned.first, owned.second,
             classesOn = s.classes,
+            paused = s.paused,
             bossActive = s.quests && quest?.outcome == app.habitrpg.domain.QuestOutcome.ACTIVE,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), HeroUiState())
 
+    fun resume() { viewModelScope.launch { settings.setPaused(false) } }
     fun setHair(id: String) { viewModelScope.launch { settings.setHair(id) } }
     fun setBody(id: String) { viewModelScope.launch { settings.setBody(id) } }
     fun equip(id: String) { viewModelScope.launch { shop.equip(id) } }

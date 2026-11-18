@@ -67,6 +67,7 @@ fun HeroScreen(onOpenSettings: () -> Unit, onOpenHistory: () -> Unit, modifier: 
     HeroContent(
         state, onOpenSettings, onOpenHistory, onChangeLook = { choosingLook = true }, modifier,
         classActions = ClassActions(viewModel::chooseClass, viewModel::spendStat, viewModel::cast, viewModel::respec),
+        onResume = viewModel::resume,
     )
     if (choosingLook) {
         AlertDialog(
@@ -94,6 +95,7 @@ internal fun HeroContent(
     onChangeLook: () -> Unit,
     modifier: Modifier = Modifier,
     classActions: ClassActions = ClassActions.NONE,
+    onResume: () -> Unit = {},
 ) {
     val c = state.character
     val h = state.history
@@ -101,6 +103,7 @@ internal fun HeroContent(
         HeroScene(c.level, c.gold, AvatarLook.forHair(state.hair, state.body, state.equipped), ItemSprites.drawableFor(state.equipped[Slot.PET]), onOpenSettings)
 
         Column(Modifier.padding(horizontal = 16.dp, vertical = 14.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            if (state.paused) PausedBanner(onResume)
             Column {
                 Text(stringResource(R.string.character_hero_title), style = MaterialTheme.typography.headlineMedium, modifier = Modifier.semantics { heading() })
                 Text(

@@ -136,4 +136,9 @@
         <item quantity="one">%1$d stat point to spend</item>
         <item quantity="other">%1$d stat points to spend</item>
     </plurals>
+    <string name="character_paused">Paused: no damage, streaks frozen. Tap to resume</string>
+    <string name="character_resume_title">Resume the game?</string>
+    <string name="character_resume_body">Missed dailies will deal damage and streaks will count again from today.</string>
+    <string name="character_resume_confirm">Resume</string>
+    <string name="character_resume_cancel">Keep paused</string>
 </resources>

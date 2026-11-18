@@ -141,4 +141,9 @@
         <item quantity="many">%1$d de points de caractéristiques à dépenser</item>
         <item quantity="other">%1$d points de caractéristiques à dépenser</item>
     </plurals>
+    <string name="character_paused">En pause : pas de dégâts, séries gelées. Touchez pour reprendre</string>
+    <string name="character_resume_title">Reprendre le jeu ?</string>
+    <string name="character_resume_body">Les quotidiennes manquées infligeront des dégâts et les séries recompteront dès aujourd\'hui.</string>
+    <string name="character_resume_confirm">Reprendre</string>
+    <string name="character_resume_cancel">Rester en pause</string>
 </resources>

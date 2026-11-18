@@ -141,4 +141,9 @@
         <item quantity="many">%1$d de puntos de estadística por gastar</item>
         <item quantity="other">%1$d puntos de estadística por gastar</item>
     </plurals>
+    <string name="character_paused">En pausa: sin daño, rachas congeladas. Toca para reanudar</string>
+    <string name="character_resume_title">¿Reanudar el juego?</string>
+    <string name="character_resume_body">Las tareas diarias falladas harán daño y las rachas volverán a contar desde hoy.</string>
+    <string name="character_resume_confirm">Reanudar</string>
+    <string name="character_resume_cancel">Seguir en pausa</string>
 </resources>

@@ -141,4 +141,9 @@
         <item quantity="many">%1$d di punti statistica da spendere</item>
         <item quantity="other">%1$d punti statistica da spendere</item>
     </plurals>
+    <string name="character_paused">In pausa: nessun danno, serie congelate. Tocca per riprendere</string>
+    <string name="character_resume_title">Riprendere il gioco?</string>
+    <string name="character_resume_body">Le giornaliere mancate faranno danno e le serie torneranno a contare da oggi.</string>
+    <string name="character_resume_confirm">Riprendi</string>
+    <string name="character_resume_cancel">Resta in pausa</string>
 </resources>

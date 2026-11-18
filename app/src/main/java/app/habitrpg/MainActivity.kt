@@ -8,6 +8,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.ProvidedValue
 import androidx.compose.runtime.CompositionLocalProvider
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,6 +38,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import app.habitrpg.feature.character.HistoryScreen
 import app.habitrpg.feature.settings.SettingsScreen
+import app.habitrpg.feature.tasks.BULK_ADDED_KEY
+import app.habitrpg.feature.tasks.BulkAddScreen
 import app.habitrpg.feature.tasks.TaskEditorScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -85,6 +88,7 @@ private fun AppNav(startWithOnboarding: Boolean) {
                 onOpenHistory = { nav.navigate("history") },
                 onAdd = { type -> nav.navigate("editor/${type.name}") },
                 onEdit = { type, id -> nav.navigate("editor/${type.name}?taskId=$id") },
+                onAddFromText = { type -> nav.navigate("bulk/${type.name}") },
             )
         }
         composable("history") { HistoryScreen(onBack = { nav.popBackStack() }) }
@@ -93,11 +97,38 @@ private fun AppNav(startWithOnboarding: Boolean) {
             onDataDeleted = { nav.navigate("onboarding") { popUpTo(0) { inclusive = true } } },
             versionName = BuildConfig.VERSION_NAME, aboutUrl = BuildConfig.ABOUT_URL) }
         composable(
-            "editor/{type}?taskId={taskId}",
+            "editor/{type}?taskId={taskId}&title={title}&lineId={lineId}",
             arguments = listOf(
                 navArgument("type") { type = NavType.StringType },
                 navArgument("taskId") { type = NavType.StringType; nullable = true; defaultValue = null },
+                navArgument("title") { type = NavType.StringType; nullable = true; defaultValue = null },
+                navArgument("lineId") { type = NavType.StringType; nullable = true; defaultValue = null },
             ),
-        ) { TaskEditorScreen(onClose = { nav.popBackStack() }) }
+        ) { entry ->
+            val lineId = entry.arguments?.getString("lineId")
+            TaskEditorScreen(
+                onClose = { nav.popBackStack() },
+                // Saved from "Add from text": tell that screen which line is now a real task.
+                onSaved = {
+                    if (lineId != null) nav.previousBackStackEntry?.savedStateHandle?.set(BULK_ADDED_KEY, lineId)
+                    nav.popBackStack()
+                },
+            )
+        }
+        composable(
+            "bulk/{type}",
+            arguments = listOf(navArgument("type") { type = NavType.StringType }),
+        ) { entry ->
+            // The editor leaves its result in this entry's saved state; the screen removes that line.
+            val savedLine by entry.savedStateHandle.getStateFlow<String?>(BULK_ADDED_KEY, null).collectAsStateWithLifecycle()
+            BulkAddScreen(
+                onClose = { nav.popBackStack() },
+                savedLine = savedLine,
+                onSavedLineHandled = { entry.savedStateHandle[BULK_ADDED_KEY] = null },
+                onEditLine = { type, lineId, title ->
+                    nav.navigate("editor/${type.name}?title=${Uri.encode(title)}&lineId=$lineId")
+                },
+            )
+        }
     }
 }

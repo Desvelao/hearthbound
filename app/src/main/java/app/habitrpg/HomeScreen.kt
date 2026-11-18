@@ -72,6 +72,7 @@ fun HomeScreen(
     onOpenHistory: () -> Unit,
     onAdd: (TaskType) -> Unit,
     onEdit: (TaskType, String) -> Unit,
+    onAddFromText: (TaskType) -> Unit,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     var destination by rememberSaveable { mutableStateOf(Destination.TODAY) }
@@ -114,7 +115,12 @@ fun HomeScreen(
                             Tab(selected = taskType == type, onClick = { taskType = type }, text = { Text(stringResource(type.tabLabelRes())) })
                         }
                     }
-                    TaskListScreen(type = taskType, onAdd = { onAdd(taskType) }, onEdit = { onEdit(taskType, it) })
+                    TaskListScreen(
+                        type = taskType,
+                        onAdd = { onAdd(taskType) },
+                        onAddFromText = { onAddFromText(taskType) },
+                        onEdit = { onEdit(taskType, it) },
+                    )
                 }
                 Destination.REWARDS -> Column {
                     PrimaryTabRow(selectedTabIndex = rewardsTab) {
