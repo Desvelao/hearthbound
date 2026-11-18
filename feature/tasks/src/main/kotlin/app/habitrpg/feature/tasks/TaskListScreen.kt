@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
@@ -24,6 +25,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.SmallFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -64,6 +66,7 @@ import app.habitrpg.domain.Difficulty
 fun TaskListScreen(
     type: TaskType,
     onAdd: () -> Unit,
+    onAddFromText: () -> Unit,
     onEdit: (String) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: TasksViewModel = hiltViewModel(),
@@ -132,8 +135,17 @@ fun TaskListScreen(
                 }
             }
             if (!(type == TaskType.TODO && showCompleted)) {
-                FloatingActionButton(onClick = onAdd, modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp)) {
-                    Icon(Icons.Default.Add, contentDescription = stringResource(type.addRes()))
+                Column(
+                    Modifier.align(Alignment.BottomEnd).padding(16.dp),
+                    horizontalAlignment = Alignment.End,
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
+                    SmallFloatingActionButton(onClick = onAddFromText) {
+                        Icon(Icons.Default.Edit, contentDescription = stringResource(R.string.tasks_bulk_open_cd))
+                    }
+                    FloatingActionButton(onClick = onAdd) {
+                        Icon(Icons.Default.Add, contentDescription = stringResource(type.addRes()))
+                    }
                 }
             }
         }

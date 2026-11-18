@@ -40,6 +40,17 @@ class TaskRepositoryTest : RepoTestBase() {
         assertNull(tasks.get(id))
     }
 
+    @Test fun saveAllStoresEveryDraftInOrder() = runTest {
+        val ids = tasks.saveAll(listOf(
+            TaskDraft(type = TaskType.TODO, title = " first "),
+            TaskDraft(type = TaskType.TODO, title = "second"),
+            TaskDraft(type = TaskType.DAILY, title = "stretch", schedule = Schedule.Weekdays.EVERY_DAY),
+        ))
+        assertEquals(3, ids.size)
+        assertEquals(listOf("first", "second"), tasks.observe(TaskType.TODO).first().map { it.title })
+        assertEquals(Schedule.Weekdays.EVERY_DAY, tasks.get(ids[2])!!.task.schedule)
+    }
+
     @Test fun dailySchedulesRoundTrip() = runTest {
         val w = tasks.save(TaskDraft(type = TaskType.DAILY, title = "Gym",
             schedule = Schedule.Weekdays.of(DayOfWeek.MONDAY, DayOfWeek.THURSDAY)))

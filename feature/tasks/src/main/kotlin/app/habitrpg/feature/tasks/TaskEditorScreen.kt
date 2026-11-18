@@ -68,9 +68,9 @@ import java.time.format.TextStyle
 /** One editor that adapts to the task type (habit, daily or to-do). */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TaskEditorScreen(onClose: () -> Unit, viewModel: TaskEditorViewModel = hiltViewModel()) {
+fun TaskEditorScreen(onClose: () -> Unit, onSaved: () -> Unit = onClose, viewModel: TaskEditorViewModel = hiltViewModel()) {
     val s by viewModel.state.collectAsStateWithLifecycle()
-    LaunchedEffect(s.finished) { if (s.finished) onClose() }
+    LaunchedEffect(s.finished) { if (s.finished) onSaved() }
     var showDate by remember { mutableStateOf(false) }
 
     Scaffold(

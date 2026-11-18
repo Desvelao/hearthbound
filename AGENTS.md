@@ -95,6 +95,11 @@ and `history`.
 - **The new-day result is produced before any screen listens.** `PlayFeedback.rollover` holds it, and
   `rememberPlayFeedback` shows it from a separate coroutine. Consuming it inside the effect that shows it cancels
   that effect (this dropped the message once; `PlayFeedbackHostTest` pins it).
+- **Add from text** (`BulkAddScreen`, route `bulk/{type}`) saves many `TaskDraft`s with `TaskRepository.saveAll` (one transaction).
+  `BulkParser` is pure; its per-language `Keywords` feed both the classifier and the help dialog, and `BulkParserTest` checks the
+  help examples in all five languages. A line's pencil opens the editor with `title` and `lineId` args; the editor reports the saved
+  line through `previousBackStackEntry.savedStateHandle[BULK_ADDED_KEY]` and the line leaves the list. A new language needs an entry
+  in `BulkParser.keywords`.
 - **Reminders:** one alarm per reminder for its next occurrence; the receiver schedules the one after. Alarms are
   rebuilt from the database on app start, boot, update, and clock, zone or exact-alarm changes. Exact alarms can be
   denied (the default on new installs), so there is an inexact fallback.

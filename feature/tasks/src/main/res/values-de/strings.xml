@@ -108,4 +108,30 @@
         <item quantity="one">noch %1$d Tag</item>
         <item quantity="other">noch %1$d Tage</item>
     </plurals>
+    <string name="tasks_bulk_open_cd">Mehrere Aufgaben aus Text hinzufügen</string>
+    <string name="tasks_bulk_title">Aus Text hinzufügen</string>
+    <string name="tasks_bulk_field">Eine Aufgabe pro Zeile</string>
+    <string name="tasks_bulk_tip">Tipp: Beginne eine Zeile mit h:, d: oder t:, um ihren Typ zu wählen.</string>
+    <string name="tasks_bulk_help_link">Wie werden Zeilen sortiert?</string>
+    <string name="tasks_bulk_preview">Vorschau</string>
+    <string name="tasks_bulk_edit_text">Text bearbeiten</string>
+    <string name="tasks_bulk_edit_options_cd">Alle Optionen bearbeiten</string>
+    <string name="tasks_bulk_remove_cd">Zeile entfernen</string>
+    <string name="tasks_bulk_guessed">Typ aus den Wörtern der Zeile erraten</string>
+    <string name="tasks_bulk_no_match">Kein Stichwort gefunden, der aktuelle Tab wird verwendet</string>
+    <string name="tasks_bulk_help_cd">Wie Zeilen sortiert werden</string>
+    <string name="tasks_bulk_help_title">Wie Zeilen sortiert werden</string>
+    <string name="tasks_bulk_help_prefix">Beginne eine Zeile mit h: (Gewohnheit), d: (Tägliches) oder t: (To-do) oder mit [h], [d] oder [t]. Das gilt immer.</string>
+    <string name="tasks_bulk_help_clean">Aufzählungszeichen, Nummern und Kästchen (-, *, 1., [ ]) am Zeilenanfang werden entfernt.</string>
+    <string name="tasks_bulk_help_habit">Gewohnheit: eine Zeile mit %1$s</string>
+    <string name="tasks_bulk_help_daily">Tägliches: eine Zeile mit %1$s oder „%2$s“ (jeder Wochentag)</string>
+    <string name="tasks_bulk_help_fallback">Alles andere kommt nach: %1$s (der Tab, von dem du kommst). In der Vorschau kannst du jede Zeile ändern.</string>
+    <string name="tasks_bulk_example">Beispiel: %1$s</string>
+    <string name="tasks_bulk_example_habit">+ Ein Glas Wasser trinken</string>
+    <string name="tasks_bulk_example_daily">Jeden Morgen dehnen</string>
+    <string name="tasks_bulk_example_todo">Briefmarken kaufen</string>
+    <plurals name="tasks_bulk_add">
+        <item quantity="one">%1$d Aufgabe hinzufügen</item>
+        <item quantity="other">%1$d Aufgaben hinzufügen</item>
+    </plurals>
 </resources>

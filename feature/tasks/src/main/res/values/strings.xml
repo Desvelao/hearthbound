@@ -108,4 +108,30 @@
         <item quantity="one">%1$d day left</item>
         <item quantity="other">%1$d days left</item>
     </plurals>
+    <string name="tasks_bulk_open_cd">Add several tasks from text</string>
+    <string name="tasks_bulk_title">Add from text</string>
+    <string name="tasks_bulk_field">One task per line</string>
+    <string name="tasks_bulk_tip">Tip: start a line with h:, d: or t: to choose its type.</string>
+    <string name="tasks_bulk_help_link">How are lines sorted?</string>
+    <string name="tasks_bulk_preview">Preview</string>
+    <string name="tasks_bulk_edit_text">Edit text</string>
+    <string name="tasks_bulk_edit_options_cd">Edit all options</string>
+    <string name="tasks_bulk_remove_cd">Remove line</string>
+    <string name="tasks_bulk_guessed">Type guessed from the words in the line</string>
+    <string name="tasks_bulk_no_match">No keyword found, using the current tab</string>
+    <string name="tasks_bulk_help_cd">How lines are sorted</string>
+    <string name="tasks_bulk_help_title">How lines are sorted</string>
+    <string name="tasks_bulk_help_prefix">Start a line with h: (habit), d: (daily) or t: (to-do), or with [h], [d] or [t]. This always wins.</string>
+    <string name="tasks_bulk_help_clean">Bullets, numbers and checkboxes (-, *, 1., [ ]) are removed from the start of a line.</string>
+    <string name="tasks_bulk_help_habit">Habit: a line with %1$s</string>
+    <string name="tasks_bulk_help_daily">Daily: a line with %1$s, or “%2$s” (any weekday)</string>
+    <string name="tasks_bulk_help_fallback">Anything else goes to: %1$s (the tab you came from). You can change every line in the preview.</string>
+    <string name="tasks_bulk_example">Example: %1$s</string>
+    <string name="tasks_bulk_example_habit">+ Drink a glass of water</string>
+    <string name="tasks_bulk_example_daily">Stretch every morning</string>
+    <string name="tasks_bulk_example_todo">Buy stamps</string>
+    <plurals name="tasks_bulk_add">
+        <item quantity="one">Add %1$d task</item>
+        <item quantity="other">Add %1$d tasks</item>
+    </plurals>
 </resources>

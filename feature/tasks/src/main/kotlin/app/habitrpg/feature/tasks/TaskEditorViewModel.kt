@@ -71,13 +71,16 @@ class TaskEditorViewModel @Inject constructor(
     val allTags: StateFlow<List<TagEntity>> =
         tagRepo.observe().stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
+    /** A title to start a new task with (from "Add from text"); ignored when editing. */
+    private val prefillTitle: String = savedState.get<String>("title").orEmpty()
+
     private val _state = MutableStateFlow(EditorState(type = type))
     val state: StateFlow<EditorState> = _state.asStateFlow()
 
     init {
         viewModelScope.launch {
             val existing = taskId?.let { repo.get(it) }
-            _state.value = if (existing == null) EditorState(loaded = true, type = type) else {
+            _state.value = if (existing == null) EditorState(loaded = true, type = type, title = prefillTitle) else {
                 val s = existing.task.schedule
                 EditorState(
                     loaded = true, id = existing.id, type = existing.type, title = existing.title,

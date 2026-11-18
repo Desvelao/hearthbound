@@ -109,4 +109,31 @@
         <item quantity="many">quedan %1$d de días</item>
         <item quantity="other">quedan %1$d días</item>
     </plurals>
+    <string name="tasks_bulk_open_cd">Añadir varias tareas desde texto</string>
+    <string name="tasks_bulk_title">Añadir desde texto</string>
+    <string name="tasks_bulk_field">Una tarea por línea</string>
+    <string name="tasks_bulk_tip">Consejo: empieza una línea con h:, d: o t: para elegir su tipo.</string>
+    <string name="tasks_bulk_help_link">¿Cómo se clasifican las líneas?</string>
+    <string name="tasks_bulk_preview">Vista previa</string>
+    <string name="tasks_bulk_edit_text">Editar texto</string>
+    <string name="tasks_bulk_edit_options_cd">Editar todas las opciones</string>
+    <string name="tasks_bulk_remove_cd">Quitar línea</string>
+    <string name="tasks_bulk_guessed">Tipo deducido de las palabras de la línea</string>
+    <string name="tasks_bulk_no_match">Sin palabra clave, se usa la pestaña actual</string>
+    <string name="tasks_bulk_help_cd">Cómo se clasifican las líneas</string>
+    <string name="tasks_bulk_help_title">Cómo se clasifican las líneas</string>
+    <string name="tasks_bulk_help_prefix">Empieza una línea con h: (hábito), d: (diaria) o t: (pendiente), o con [h], [d] o [t]. Esto siempre manda.</string>
+    <string name="tasks_bulk_help_clean">Las viñetas, números y casillas (-, *, 1., [ ]) se quitan del principio de la línea.</string>
+    <string name="tasks_bulk_help_habit">Hábito: una línea con %1$s</string>
+    <string name="tasks_bulk_help_daily">Diaria: una línea con %1$s, o «%2$s» (cualquier día de la semana)</string>
+    <string name="tasks_bulk_help_fallback">Todo lo demás va a: %1$s (la pestaña desde la que llegaste). Puedes cambiar cada línea en la vista previa.</string>
+    <string name="tasks_bulk_example">Ejemplo: %1$s</string>
+    <string name="tasks_bulk_example_habit">+ Beber un vaso de agua</string>
+    <string name="tasks_bulk_example_daily">Estirar cada mañana</string>
+    <string name="tasks_bulk_example_todo">Comprar sellos</string>
+    <plurals name="tasks_bulk_add">
+        <item quantity="one">Añadir %1$d tarea</item>
+        <item quantity="many">Añadir %1$d de tareas</item>
+        <item quantity="other">Añadir %1$d tareas</item>
+    </plurals>
 </resources>

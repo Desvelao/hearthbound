@@ -109,4 +109,31 @@
         <item quantity="many">%1$d di giorni rimasti</item>
         <item quantity="other">%1$d giorni rimasti</item>
     </plurals>
+    <string name="tasks_bulk_open_cd">Aggiungi più attività da un testo</string>
+    <string name="tasks_bulk_title">Aggiungi da testo</string>
+    <string name="tasks_bulk_field">Un’attività per riga</string>
+    <string name="tasks_bulk_tip">Suggerimento: inizia una riga con h:, d: o t: per sceglierne il tipo.</string>
+    <string name="tasks_bulk_help_link">Come vengono ordinate le righe?</string>
+    <string name="tasks_bulk_preview">Anteprima</string>
+    <string name="tasks_bulk_edit_text">Modifica testo</string>
+    <string name="tasks_bulk_edit_options_cd">Modifica tutte le opzioni</string>
+    <string name="tasks_bulk_remove_cd">Rimuovi riga</string>
+    <string name="tasks_bulk_guessed">Tipo dedotto dalle parole della riga</string>
+    <string name="tasks_bulk_no_match">Nessuna parola chiave, si usa la scheda attuale</string>
+    <string name="tasks_bulk_help_cd">Come vengono ordinate le righe</string>
+    <string name="tasks_bulk_help_title">Come vengono ordinate le righe</string>
+    <string name="tasks_bulk_help_prefix">Inizia una riga con h: (abitudine), d: (quotidiana) o t: (da fare), oppure con [h], [d] o [t]. Questo vale sempre.</string>
+    <string name="tasks_bulk_help_clean">Elenchi puntati, numeri e caselle (-, *, 1., [ ]) vengono tolti dall’inizio della riga.</string>
+    <string name="tasks_bulk_help_habit">Abitudine: una riga con %1$s</string>
+    <string name="tasks_bulk_help_daily">Quotidiana: una riga con %1$s, oppure «%2$s» (qualsiasi giorno)</string>
+    <string name="tasks_bulk_help_fallback">Tutto il resto va in: %1$s (la scheda da cui vieni). Puoi cambiare ogni riga nell’anteprima.</string>
+    <string name="tasks_bulk_example">Esempio: %1$s</string>
+    <string name="tasks_bulk_example_habit">+ Bere un bicchiere d’acqua</string>
+    <string name="tasks_bulk_example_daily">Fare stretching ogni mattina</string>
+    <string name="tasks_bulk_example_todo">Comprare i francobolli</string>
+    <plurals name="tasks_bulk_add">
+        <item quantity="one">Aggiungi %1$d attività</item>
+        <item quantity="many">Aggiungi %1$d di attività</item>
+        <item quantity="other">Aggiungi %1$d attività</item>
+    </plurals>
 </resources>

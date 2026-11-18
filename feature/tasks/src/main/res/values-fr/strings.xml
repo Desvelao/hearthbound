@@ -109,4 +109,31 @@
         <item quantity="many">%1$d de jours restants</item>
         <item quantity="other">%1$d jours restants</item>
     </plurals>
+    <string name="tasks_bulk_open_cd">Ajouter plusieurs tâches depuis un texte</string>
+    <string name="tasks_bulk_title">Ajouter depuis un texte</string>
+    <string name="tasks_bulk_field">Une tâche par ligne</string>
+    <string name="tasks_bulk_tip">Astuce : commencez une ligne par h:, d: ou t: pour choisir son type.</string>
+    <string name="tasks_bulk_help_link">Comment les lignes sont-elles classées ?</string>
+    <string name="tasks_bulk_preview">Aperçu</string>
+    <string name="tasks_bulk_edit_text">Modifier le texte</string>
+    <string name="tasks_bulk_edit_options_cd">Modifier toutes les options</string>
+    <string name="tasks_bulk_remove_cd">Supprimer la ligne</string>
+    <string name="tasks_bulk_guessed">Type deviné d’après les mots de la ligne</string>
+    <string name="tasks_bulk_no_match">Aucun mot-clé trouvé, l’onglet actuel est utilisé</string>
+    <string name="tasks_bulk_help_cd">Comment les lignes sont classées</string>
+    <string name="tasks_bulk_help_title">Comment les lignes sont classées</string>
+    <string name="tasks_bulk_help_prefix">Commencez une ligne par h: (habitude), d: (quotidienne) ou t: (à faire), ou par [h], [d] ou [t]. Cela l’emporte toujours.</string>
+    <string name="tasks_bulk_help_clean">Les puces, numéros et cases (-, *, 1., [ ]) sont retirés au début de la ligne.</string>
+    <string name="tasks_bulk_help_habit">Habitude : une ligne avec %1$s</string>
+    <string name="tasks_bulk_help_daily">Quotidienne : une ligne avec %1$s, ou « %2$s » (n’importe quel jour)</string>
+    <string name="tasks_bulk_help_fallback">Tout le reste va dans : %1$s (l’onglet d’où vous venez). Vous pouvez modifier chaque ligne dans l’aperçu.</string>
+    <string name="tasks_bulk_example">Exemple : %1$s</string>
+    <string name="tasks_bulk_example_habit">+ Boire un verre d’eau</string>
+    <string name="tasks_bulk_example_daily">S’étirer chaque matin</string>
+    <string name="tasks_bulk_example_todo">Acheter des timbres</string>
+    <plurals name="tasks_bulk_add">
+        <item quantity="one">Ajouter %1$d tâche</item>
+        <item quantity="many">Ajouter %1$d de tâches</item>
+        <item quantity="other">Ajouter %1$d tâches</item>
+    </plurals>
 </resources>

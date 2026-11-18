@@ -43,23 +43,31 @@ class TaskRepository @Inject constructor(
     }
 
     /** Creates or edits a task. Editing never touches engine-owned fields (counts, streak, done state). */
-    suspend fun save(draft: TaskDraft): String {
-        var oldReminders = emptyList<ReminderEntity>()
-        var newReminders = emptyList<ReminderEntity>()
-        val id = db.withTransaction {
-            oldReminders = draft.id?.let { reminders.forTask(it) }.orEmpty()
-            val id = saveRows(draft)
-            reminders.clearForTask(id)
-            newReminders = draft.reminders.filter { it.weekdayMask and 0b1111111 != 0 }.map {
-                ReminderEntity(UUID.randomUUID().toString(), id, it.minuteOfDay, it.weekdayMask)
+    suspend fun save(draft: TaskDraft): String = saveAll(listOf(draft)).single()
+
+    /** Saves [drafts] in one transaction, in order: either all of them are stored or none. Returns their ids. */
+    suspend fun saveAll(drafts: List<TaskDraft>): List<String> {
+        val oldReminders = mutableListOf<ReminderEntity>()
+        val newReminders = mutableListOf<ReminderEntity>()
+        val ids = db.withTransaction {
+            oldReminders.clear()
+            newReminders.clear()
+            drafts.map { draft ->
+                oldReminders += draft.id?.let { reminders.forTask(it) }.orEmpty()
+                val id = saveRows(draft)
+                reminders.clearForTask(id)
+                val rows = draft.reminders.filter { it.weekdayMask and 0b1111111 != 0 }.map {
+                    ReminderEntity(UUID.randomUUID().toString(), id, it.minuteOfDay, it.weekdayMask)
+                }
+                reminders.insertAll(rows)
+                newReminders += rows
+                id
             }
-            reminders.insertAll(newReminders)
-            id
         }
         // Alarms change only after the rows committed, so an alarm never outlives a rolled-back save.
         oldReminders.forEach { scheduler.cancel(it.id) }
         newReminders.forEach(scheduler::schedule)
-        return id
+        return ids
     }
 
     private suspend fun saveRows(draft: TaskDraft): String {

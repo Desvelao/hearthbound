@@ -7,6 +7,12 @@ workflow publishes the matching section as the GitHub Release notes.
 
 ## [Unreleased]
 
+### Added
+- A "Paused" banner shows above the tabs and on the Hero page while pause mode is on; tap it to resume the game.
+- Add several tasks at once from pasted text (the small pencil button on the Tasks tab): one task per line, each line
+  gets a guessed type (habit, daily or to-do) that you can change, and a button opens the full editor for it first.
+  An info button explains the words and `h:`, `d:`, `t:` prefixes the guess understands.
+
 ## [0.1.0] - 2026-11-14
 
 First release.
